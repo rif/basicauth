@@ -21,6 +21,7 @@ class CustomServerHandler(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         key = self.server.get_auth_key()
+        print("HEADERS: ", self.headers)
 
         ''' Present frontpage with user authentication. '''
         if self.headers.get('Authorization') == None:
